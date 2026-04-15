@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OFUQ</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background: #020617;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* 🔝 Progress Bar */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(to right, #22c55e, #facc15);
+  width: 0%;
+  z-index: 999;
+}
+
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px; /* ✨ مهم */
+  padding: 60px;
+}
+
+/* Text */
+.text {
+  width: 50%;
+}
+
+h1 {
+  font-size: 48px;
+  color: #facc15;
+}
+
+h2 {
+  font-size: 28px;
+  color: #22c55e;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+.character {
+  width: 260px; /* كان 180 */
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  flex-direction: column;
+}
+
+
+.hero {
+  background: radial-gradient(circle at center, #745b43, #2c1f17) !important;
+}
+.section:nth-child(2) {
+  background: linear-gradient(135deg, #020617, #1e3a8a);
+}
+
+.section:nth-child(3) {
+  background: linear-gradient(135deg, #022c22, #065f46);
+}
+
+.section:nth-child(4) {
+  background: linear-gradient(135deg, #0f172a, #312e81);
+}
+
+.section:nth-child(5) {
+  background: linear-gradient(135deg, #064e3b, #020617);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 80px;
+  background: linear-gradient(135deg, #020617, #1e293b);
+}
+.footer h2 {
+  color: #22c55e;
+}
+
+.footer a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid #facc15;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  background: #facc15;
+  color: #020617;
+}
+a {
+  color: #facc15;
+  font-size: 14px;
+}
+
+/* Fade animation */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  width: 350px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.6)); /* glow خفيف */
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.character {
+  width: 320px; /* 🔥 أكبر */
+  image-rendering: pixelated;
+}
+
+.text {
+  width: 55%;
+}
+
+.section {
+  padding: 80px;
+}
+
+.kafd {
+  width: 420px; /* 🔥 أكبر من باقي الشخصيات */
+  transform: scale(1.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<!-- 🎮 Hero -->
+<section class="section hero fade">
+    <h1>AFAAQ</h1>
+  
+    <img src="images/Logo.png" alt="logo" class="logo">
+  
+    <p>An interactive gamified journey to explore Expo 2030 Riyadh</p>
+  </section>
+
+<!-- Problem -->
+<section class="section fade">
+  <div class="text">
+    <h2>Problem</h2>
+    <p>
+      Visitors often experience exhibitions in a passive and traditional way,
+      which reduces engagement and limits full exploration of the event.
+    </p>
+  </div>
+  <img src="images/char1.png" class="character">
+</section>
+
+<!-- Vision -->
+<section class="section fade">
+  <div class="text">
+    <h2>Vision</h2>
+    <p>
+      Transform the visitor journey into an immersive and engaging experience
+      by combining culture, technology, and interactive gameplay.
+    </p>
+  </div>
+  <img src="images/char2.png" class="character">
+</section>
+
+<!-- Solution -->
+<section class="section fade">
+  <div class="text">
+    <h2>Solution</h2>
+    <p>
+      A gamified application that motivates users to explore pavilions
+      through challenges, rewards, and interactive experiences.
+    </p>
+  </div>
+  <img src="images/char5.png" class="character kafd">
+</section>
+
+<!-- Saudi Spirit -->
+<section class="section fade">
+  <div class="text">
+    <h2>Saudi Spirit</h2>
+    <p>
+      The experience reflects the diversity of Saudi regions,
+      offering a unique cultural journey inspired by heritage and identity.
+    </p>
+  </div>
+  <img src="images/char3.png" class="character">
+</section>
+
+<!-- Footer -->
+<section class="footer fade">
+  <h2>Full Proposal</h2>
+  <p><a href="proposal.pdf">Download Full Document</a></p>
+</section>
+
+<script>
+/* 📊 Progress Bar */
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("progress").style.width = scrolled + "%";
+};
+
+/* ✨ Fade Animation */
+const fades = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
